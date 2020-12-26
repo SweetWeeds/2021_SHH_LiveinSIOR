@@ -86,7 +86,7 @@ class ANNModelHandler():
 			model.add( BatchNormalization( ) )
 			model.add( Conv2D( 16, ( 5, 1 ), kernel_initializer = 'glorot_uniform' ) )
 			model.add( GlobalMaxPooling2D( ) )
-			model.add( Dropout( 0.5 ) )
+			model.add( Dropout( 0.1 ) )
 			model.add( Dense( self.outputShape[ 1 ], activation = 'softmax' ) )
 			adam = Adam( lr = self.learningRate, decay = self.decayRate )
 			model.compile( loss ='categorical_crossentropy', optimizer = adam, metrics = [ 'acc' ] )
