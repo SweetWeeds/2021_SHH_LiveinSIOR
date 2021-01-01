@@ -257,11 +257,12 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 void BLE_UID_ON(uint32_t Delay) {
-    printf("Button\r\n");
+    printf("BLE ON\r\n");
     EddystoneUID_Start();
     HAL_Delay(Delay);
     HCI_TL_SPI_Reset();
     MX_BlueNRG_MS_Init();
+    printf("BLE OFF\r\n");
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
