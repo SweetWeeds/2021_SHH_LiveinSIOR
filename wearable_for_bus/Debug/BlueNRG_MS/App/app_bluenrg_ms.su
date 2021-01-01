@@ -1,0 +1,5 @@
+app_bluenrg_ms.c:86:6:MX_BlueNRG_MS_Init	40	static,ignoring_inline_asm
+app_bluenrg_ms.c:181:6:MX_BlueNRG_MS_Process	8	static
+app_bluenrg_ms.c:201:13:User_Init	8	static
+app_bluenrg_ms.c:211:13:User_Process	8	static
+app_bluenrg_ms.c:221:6:EnterStopMode	8	static

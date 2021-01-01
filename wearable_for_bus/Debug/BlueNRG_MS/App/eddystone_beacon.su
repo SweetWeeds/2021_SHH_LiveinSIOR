@@ -1,0 +1,4 @@
+eddystone_beacon.c:90:6:EddystoneUID_Start	48	static
+eddystone_beacon.c:112:6:EddystoneURL_Start	48	static
+eddystone_beacon.c:135:12:EddystoneUID_Init	88	static
+eddystone_beacon.c:237:12:EddystoneURL_Init	88	static

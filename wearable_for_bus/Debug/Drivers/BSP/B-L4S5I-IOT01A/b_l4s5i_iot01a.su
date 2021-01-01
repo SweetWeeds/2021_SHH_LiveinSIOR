@@ -1,0 +1,8 @@
+b_l4s5i_iot01a.c:80:9:BSP_GetVersion	4	static
+b_l4s5i_iot01a.c:94:9:BSP_COM_Init	24	static
+b_l4s5i_iot01a.c:133:9:BSP_COM_DeInit	24	static
+b_l4s5i_iot01a.c:170:26:MX_USART1_UART_Init	24	static
+b_l4s5i_iot01a.c:289:9:BSP_COM_SelectLogPort	16	static
+b_l4s5i_iot01a.c:301:6:__io_putchar	16	static
+b_l4s5i_iot01a.c:314:13:USART1_MspInit	48	static
+b_l4s5i_iot01a.c:347:13:USART1_MspDeInit	16	static

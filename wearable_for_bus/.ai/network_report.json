@@ -1,0 +1,462 @@
+{
+    "_allocate_inputs": 0,
+    "_allocate_outputs": 0,
+    "cli_parameters": "generate --name network -m C:/Users/khk02/workspace/2021_SHH_LiveinSIOR/MCU/AI/har_IGN.h5 --type keras --compression 1 --verbosity 1 --workspace C:\\Users\\khk02\\AppData\\Local\\Temp\\mxAI_workspace9829692617873009142413016309674577 --output C:\\Users\\khk02\\.stm32cubemx",
+    "cli_version": {
+        "major": 1,
+        "micro": 0,
+        "minor": 4
+    },
+    "cli_version_str": "1.4.0",
+    "compression": {
+        "factor": null,
+        "layers": {}
+    },
+    "date_time": "Fri Jan  1 18:48:10 2021",
+    "error": 0,
+    "error_str": [],
+    "evaluation_measures": [],
+    "evaluation_status": "NOT EVALUATED",
+    "exec_cmd": "generate",
+    "exec_duration": 0.7694277763366699,
+    "hash": "78f157d8cd51294d26cb622db368918d",
+    "inputs": [
+        "input_0"
+    ],
+    "l2_error": -1.0,
+    "l2_status": "NOT EVALUATED",
+    "layers": [
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": {
+                    "c_size": 288,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        24,
+                        3,
+                        1,
+                        1
+                    ]
+                },
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 0,
+            "inputs": [],
+            "name": "input_0",
+            "out_shapes": [
+                [
+                    1,
+                    24,
+                    3
+                ]
+            ],
+            "outputs": [
+                "input_0"
+            ],
+            "shape": [
+                1,
+                24,
+                3
+            ],
+            "type": "Input"
+        },
+        {
+            "dilation": [
+                1,
+                1
+            ],
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 11688,
+                "n_params": 408,
+                "psize": 1632,
+                "rom_n_params": 408,
+                "rom_output": {
+                    "c_size": 864,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        1,
+                        1,
+                        216,
+                        1
+                    ]
+                },
+                "rom_size": 1632,
+                "rom_size_params": 1632,
+                "rom_trans": null
+            },
+            "filter_size": [
+                16,
+                1
+            ],
+            "groups": 1,
+            "id": 0,
+            "inputs": [
+                "input_0"
+            ],
+            "name": "conv2d",
+            "num_filters": 24,
+            "out_shapes": [
+                [
+                    24,
+                    9,
+                    3
+                ]
+            ],
+            "outputs": [
+                "conv2d"
+            ],
+            "pad": [
+                0,
+                0
+            ],
+            "stride": [
+                1,
+                1
+            ],
+            "type": "Conv2D",
+            "use_bias": true
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": null,
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 0,
+            "inputs": [
+                "conv2d"
+            ],
+            "name": "conv2d_nl",
+            "nonlinearity": "relu",
+            "out_shapes": [
+                [
+                    24,
+                    9,
+                    3
+                ]
+            ],
+            "outputs": [
+                "conv2d_nl"
+            ],
+            "type": "Nonlinearity"
+        },
+        {
+            "ceil_mode": "floor",
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": null,
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 1,
+            "inputs": [
+                "conv2d_nl"
+            ],
+            "name": "max_pooling2d",
+            "out_shapes": [
+                [
+                    24,
+                    3,
+                    3
+                ]
+            ],
+            "outputs": [
+                "max_pooling2d"
+            ],
+            "pool_function": "max",
+            "pool_pad": [
+                0,
+                0
+            ],
+            "pool_size": [
+                3,
+                1
+            ],
+            "pool_stride": [
+                3,
+                1
+            ],
+            "type": "Pool"
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": null,
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 2,
+            "inputs": [
+                "max_pooling2d"
+            ],
+            "name": "flatten",
+            "out_shapes": [
+                [
+                    216
+                ]
+            ],
+            "outputs": [
+                "flatten"
+            ],
+            "shape": [
+                -1
+            ],
+            "type": "Reshape"
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 2592,
+                "n_params": 2604,
+                "psize": 10416,
+                "rom_n_params": 2604,
+                "rom_output": {
+                    "c_size": 48,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        1,
+                        1,
+                        12,
+                        1
+                    ]
+                },
+                "rom_size": 10416,
+                "rom_size_params": 10416,
+                "rom_trans": null
+            },
+            "id": 3,
+            "inputs": [
+                "flatten"
+            ],
+            "name": "dense",
+            "num_units": 12,
+            "out_shapes": [
+                [
+                    12
+                ]
+            ],
+            "outputs": [
+                "dense"
+            ],
+            "type": "Dense",
+            "use_bias": true
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 24,
+                "n_params": 26,
+                "psize": 104,
+                "rom_n_params": 26,
+                "rom_output": {
+                    "c_size": 8,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        1,
+                        1,
+                        2,
+                        1
+                    ]
+                },
+                "rom_size": 104,
+                "rom_size_params": 104,
+                "rom_trans": null
+            },
+            "id": 5,
+            "inputs": [
+                "dense"
+            ],
+            "name": "dense_1",
+            "num_units": 2,
+            "out_shapes": [
+                [
+                    2
+                ]
+            ],
+            "outputs": [
+                "dense_1"
+            ],
+            "type": "Dense",
+            "use_bias": true
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 30,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": {
+                    "c_size": 8,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        1,
+                        1,
+                        2,
+                        1
+                    ]
+                },
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 5,
+            "inputs": [
+                "dense_1"
+            ],
+            "name": "dense_1_nl",
+            "nonlinearity": "softmax",
+            "out_shapes": [
+                [
+                    2
+                ]
+            ],
+            "outputs": [
+                "dense_1_nl"
+            ],
+            "type": "Nonlinearity"
+        }
+    ],
+    "maxlen_name": 25,
+    "md5": "78f157d8cd51294d26cb622db368918d",
+    "model_files": [
+        "C:\\Users\\khk02\\workspace\\2021_SHH_LiveinSIOR\\MCU\\AI\\har_IGN.h5"
+    ],
+    "model_n_params": 3038,
+    "model_name": "har_IGN",
+    "model_size": 12152,
+    "model_type": "keras (keras_dump)",
+    "name": "network",
+    "outputs": [
+        "dense_1_nl"
+    ],
+    "ram_io_size": [
+        288,
+        8
+    ],
+    "ram_size": [
+        1728,
+        1728
+    ],
+    "report_version": 1.0,
+    "rom_cfact": null,
+    "rom_heap": [
+        0,
+        0
+    ],
+    "rom_heap_inspector": 1024,
+    "rom_inputs": [
+        {
+            "c_size": 288,
+            "c_type": "ai_float",
+            "name": "input_0"
+        }
+    ],
+    "rom_l2_error_max": 0.0,
+    "rom_n_c_nodes": 4,
+    "rom_n_macc": 14334,
+    "rom_n_macc_max": 11688,
+    "rom_outputs": [
+        {
+            "c_size": 8,
+            "c_type": "ai_float",
+            "name": "dense_1_nl"
+        }
+    ],
+    "rom_size": 12152,
+    "rom_size_max": 10416,
+    "rom_stack": [
+        0,
+        0
+    ],
+    "strategy": "heap_overlay_pool",
+    "tools_api_version": {
+        "major": 1,
+        "micro": 0,
+        "minor": 3
+    },
+    "tools_version": {
+        "extra": null,
+        "major": 5,
+        "micro": 0,
+        "minor": 2
+    },
+    "version": "0.2"
+}
