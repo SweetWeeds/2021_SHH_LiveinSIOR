@@ -44,3 +44,5 @@
 - 라즈베리파이4
 - QT Designer
 - [BUS_INFO/GUI](https://github.com/SweetWeeds/shh2021_LiveinSIOR/tree/master/BUS_INFO/GUI)
+
+# Cube.AI 사용 여부: O
