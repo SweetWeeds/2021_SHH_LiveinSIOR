@@ -9,6 +9,7 @@ from time import sleep
 from random import uniform
 
 connflag = False
+BLE_SCAN_TIME = 5
 
 NameSpace = '7777772e73742e636f6d'
 UserList = ['000000000001']
@@ -42,10 +43,13 @@ if __name__ == "__main__":
     mqttc.loop_start()                                          # Start the loop
     
     while(True):
-        scan_results = PyBeacon.scan(5)
+        # 비컨 스캐닝
+        scan_results = PyBeacon.scan(BLE_SCAN_TIME)
+        # 스캔 결과 탐색
         for s in scan_results:
             if s['type'] == 'uid':
                 print("namespace:{}, instance:{}".format(s['content']['namespace'], s['content']['instance']))
+                # 리스트에 존재하는 UID인지 체크
                 if s['content']['namespace'] == NameSpace and s['content']['instance'] in UserList:
                     print("Publishing...")
                     mqttc.publish('passenger/get_in', '{"ID":"%s", "Handling":"True"}' % s['content']['instance'], qos=1)
