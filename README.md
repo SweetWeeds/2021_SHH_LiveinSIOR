@@ -13,6 +13,16 @@
 
 단말기 - BLE - 버스 정보 시스템 - AWS IoT - LTE - 버스
 
+# 소개 영상
+이미지를 클릭해주십시오.
+
+[![](https://img.youtube.com/vi/MRky6hmbNtE/0.jpg)](https://youtu.be/MRky6hmbNtE)
+
+# 시연 영상
+이미지를 클릭해주십시오.
+
+[![](https://img.youtube.com/vi/4hIDGSzT3UQ/0.jpg)](https://www.youtube.com/watch?v=4hIDGSzT3UQ)
+
 # 담당
 
 ## 하경준: BLE Beacon
@@ -34,13 +44,3 @@
 - 라즈베리파이4
 - QT Designer
 - [BUS_INFO/GUI](https://github.com/SweetWeeds/shh2021_LiveinSIOR/tree/master/BUS_INFO/GUI)
-
-# 소개 영상
-이미지를 클릭해주십시오.
-
-[![](https://img.youtube.com/vi/MRky6hmbNtE/0.jpg)](https://youtu.be/MRky6hmbNtE)
-
-# 시연 영상
-이미지를 클릭해주십시오.
-
-[![](https://img.youtube.com/vi/4hIDGSzT3UQ/0.jpg)](https://www.youtube.com/watch?v=4hIDGSzT3UQ)
