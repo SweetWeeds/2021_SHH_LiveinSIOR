@@ -10,8 +10,8 @@ from random import uniform
 
 connflag = False
 
-NameSpace = '01234567890123456789'
-UserList = ['012345678901']
+NameSpace = '7777772e73742e636f6d'
+UserList = ['000000000001']
 
 awshost = "a371nu4tbem1pv-ats.iot.ap-northeast-2.amazonaws.com"      # Endpoint
 awsport = 8883                                              # Port no.   
@@ -45,7 +45,9 @@ if __name__ == "__main__":
         scan_results = PyBeacon.scan(3)
         for s in scan_results:
             if s['type'] == 'uid':
+                print("namespace:{}, instance:{}".format(s['content']['namespace'], s['content']['instance']))
                 if s['content']['namespace'] == NameSpace and s['content']['instance'] in UserList:
+                    print("Publishing...")
                     mqttc.publish('passenger/get_in', '{"ID":%s, "Handling":"True"}' % s['content']['instance'], qos=1)
             else:
                 continue
