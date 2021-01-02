@@ -16,4 +16,4 @@
 Python, C, C++
 
 # 사용 기술
-STM32Cube.AI, AWS IoT, QT5, Google Cloud TTS
+STM32Cube.AI, Tensorflow, Keras, AWS IoT, QT5, Google Cloud TTS
