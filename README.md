@@ -25,24 +25,28 @@
 
 # 담당
 
-## 하경준: BLE Beacon
+## BLE Beacon
 - STM32보드 B-L4S5I-IOT01A
 - Cube-MX
+- 담당: 하경준
 - [MCU/wearable_for_bus](https://github.com/SweetWeeds/shh2021_LiveinSIOR/tree/master/MCU/wearable_for_bus)
 
-## 권한결: STM32Cube.AI, AWS IoT
+## STM32Cube.AI, AWS IoT
 - STM32보드 B-LS45I-IOT01A
 - Cube.AI, AWS IoT
+- 담당: 권한결
 - [MCU/AI](https://github.com/SweetWeeds/shh2021_LiveinSIOR/tree/master/MCU/AI), [BUS/subscriber.py](https://github.com/SweetWeeds/shh2021_LiveinSIOR/blob/master/BUS/subscriber.py), [BUS_INFO/AWS_IoT](https://github.com/SweetWeeds/shh2021_LiveinSIOR/tree/master/BUS_INFO/AWS_IoT)
 
-## 안현철: TTS, LCD
+## TTS, LCD
 - 라즈베리파이4
 - 구글 클라우드
+- 담당: 안현철
 - [BUS](https://github.com/SweetWeeds/shh2021_LiveinSIOR/tree/master/BUS)
 
-## 김춘수: GUI
+## GUI
 - 라즈베리파이4
 - QT Designer
+- 담당: 김춘수
 - [BUS_INFO/GUI](https://github.com/SweetWeeds/shh2021_LiveinSIOR/tree/master/BUS_INFO/GUI)
 
 # Cube.AI 사용 여부: O
