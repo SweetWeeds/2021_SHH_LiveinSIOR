@@ -68,11 +68,15 @@ class ANNModelHandler():
 		if self.modelName == 'IGN':
 
 			model = Sequential( )
-			model.add( Conv2D( 24, ( 16, 1 ), input_shape = ( self.inputShape[ 1 ], self.inputShape[ 2 ], self.inputShape[ 3 ] ), activation = 'relu' ) )
+			model.add( Conv2D( 24, ( 13, 1 ), input_shape = ( self.inputShape[ 1 ], self.inputShape[ 2 ], self.inputShape[ 3 ] ), activation = 'relu' ) )
+			model.add( BatchNormalization( ) )
+			model.add( Conv2D( 24, ( 4, 1 )))
 			model.add( MaxPooling2D( pool_size = ( 3, 1 ) ) )
 			model.add( Flatten( ) )
 			model.add( Dense( 12 ) )
-			model.add( Dropout( 0.5 ) )
+			model.add( Dense( 24 ) )
+			model.add( Dense( 12 ) )
+			model.add( Dropout( 0.3 ) )
 			model.add( Dense( self.outputShape[ 1 ], activation = 'softmax' ) )
 			adam = Adam( lr = self.learningRate, decay = self.decayRate )
 			model.compile( loss = 'categorical_crossentropy', optimizer = adam, metrics = [ 'acc' ] )
