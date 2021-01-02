@@ -11,7 +11,7 @@
 # 구성도
 ![구성도](image/entire_system.png)
 
-## 단말기 - BLE - 버스 정보 시스템 - AWS IoT - LTE - 버스
+단말기 - BLE - 버스 정보 시스템 - AWS IoT - LTE - 버스
 
 # 사용 언어
 Python, C, C++
