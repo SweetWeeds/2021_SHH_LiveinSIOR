@@ -13,13 +13,13 @@ connflag = False
 NameSpace = '01234567890123456789'
 UserList = ['012345678901']
 
-awshost = "athvs28tgejvh-ats.iot.ap-northeast-2.amazonaws.com"      # Endpoint
+awshost = "a371nu4tbem1pv-ats.iot.ap-northeast-2.amazonaws.com"      # Endpoint
 awsport = 8883                                              # Port no.   
-clientId = "BUS_SYS1"                                       # Thing_Name
-thingName = "BUS_SYS1"                                      # Thing_Name
-caPath = "./AWS_IoT/root-CA.crt"                                      # Root_CA_Certificate_Name
-certPath = "./AWS_IoT/BUS_SYS1.cert.pem"                            # <Thing_Name>.cert.pem
-keyPath = "./AWS_IoT/BUS_SYS1.private.key"                          # <Thing_Name>.private.key
+clientId = "BUS_INFO_SYS1"                                       # Thing_Name
+thingName = "BUS_INFO_SYS1"                                      # Thing_Name
+caPath = "./root-CA.crt"                                      # Root_CA_Certificate_Name
+certPath = "./BUS_INFO_SYS1.cert.pem"                           # <Thing_Name>.cert.pem
+keyPath = "./BUS_INFO_SYS1.private.key"                          # <Thing_Name>.private.key
 
 def on_connect(client, userdata, flags, rc):                # func for making connection
     global connflag
@@ -46,6 +46,6 @@ if __name__ == "__main__":
         for s in scan_results:
             if s['type'] == 'uid':
                 if s['content']['namespace'] == NameSpace and s['content']['instance'] in UserList:
-                    mqttc.publish('passenger/get_in', '{"Handling":"True"}', qos=1)
+                    mqttc.publish('passenger/get_in', '{"ID":%s, "Handling":"True"}' % s['content']['instance'], qos=1)
             else:
                 continue
