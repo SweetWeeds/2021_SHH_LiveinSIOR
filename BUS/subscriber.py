@@ -3,10 +3,29 @@ import os
 import socket
 import ssl
 import json
+#import lcddriver
+import pygame
 
+CHUNK = 1024
 targetTopic = 'passenger/get_in'
 NameSpace = '7777772e73742e636f6d'
 UserList = ['000000000001']
+
+mutex = 0
+
+#lcd = lcddriver.lcd()
+#lcd.lcd_clear()
+
+def play_audio(filename):
+    freq = 24000    # sampling rate, 44100(CD), 16000(Naver TTS), 24000(google TTS)
+    bitsize = -16   # signed 16 bit. support 8,-8,16,-16
+    channels = 1    # 1 is mono, 2 is stereo
+    buffer = 2048   # number of samples (experiment to get right sound)
+
+    # default : pygame.mixer.init(frequency=22050, size=-16, channels=2, buffer=4096)
+    pygame.mixer.init(freq, bitsize, channels, buffer)
+    pygame.mixer.music.load(filename)
+    pygame.mixer.music.play()
 
 def on_connect(client, userdata, flags, rc):                # func for making connection
     print("Connection returned result: " + str(rc) )
@@ -15,12 +34,20 @@ def on_connect(client, userdata, flags, rc):                # func for making co
     client.subscribe("#" , 1 )                              # Subscribe to all topics
  
 def on_message(client, userdata, msg):                      # Func for receiving msgs
-    print("topic: "+msg.topic)
-    print("payload: "+str(msg.payload.decode("utf-8")))
-    if (msg.topic == targetTopic and msg.):
-        payload = json.loads(str(msg.payload.decode("utf-8")))
-        
-    
+    global mutex
+    if (mutex == 0):
+        mutex = 1
+        print("topic: "+msg.topic)
+        print("payload: "+str(msg.payload.decode("utf-8")))
+        if (msg.topic == targetTopic):
+            payload = json.loads(str(msg.payload.decode("utf-8")))
+            #lcd.lcd_display_string("Needa a help", 1)
+            #lcd.lcd_display_string("At next stop", 2)
+            play_audio("./output.mp3")
+        mutex = 0
+    else:
+        pass
+
     
 #def on_log(client, userdata, level, msg):
 #    print(msg.topic+" "+str(msg.payload))

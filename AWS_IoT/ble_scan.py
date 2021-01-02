@@ -42,12 +42,12 @@ if __name__ == "__main__":
     mqttc.loop_start()                                          # Start the loop
     
     while(True):
-        scan_results = PyBeacon.scan(3)
+        scan_results = PyBeacon.scan(1)
         for s in scan_results:
             if s['type'] == 'uid':
                 print("namespace:{}, instance:{}".format(s['content']['namespace'], s['content']['instance']))
                 if s['content']['namespace'] == NameSpace and s['content']['instance'] in UserList:
                     print("Publishing...")
-                    mqttc.publish('passenger/get_in', '{"ID":%s, "Handling":"True"}' % s['content']['instance'], qos=1)
+                    mqttc.publish('passenger/get_in', '{"ID":"%s", "Handling":"True"}' % s['content']['instance'], qos=1)
             else:
                 continue
