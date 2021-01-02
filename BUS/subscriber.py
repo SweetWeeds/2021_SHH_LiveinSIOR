@@ -10,7 +10,6 @@ CHUNK = 1024
 targetTopic = 'passenger/get_in'
 NameSpace = '7777772e73742e636f6d'
 UserList = ['000000000001']
-
 mutex = 0
 
 #lcd = lcddriver.lcd()
