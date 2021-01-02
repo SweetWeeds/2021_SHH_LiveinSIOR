@@ -40,19 +40,24 @@ def on_connect(client, userdata, flags, rc):                # func for making co
     client.subscribe("#" , 1 )                              # Subscribe to all topics
  
 def on_message(client, userdata, msg):                      # Func for receiving msgs
-    global mutex
+    global mutex    # 뮤텍스 구현
     if (mutex == 0):
         mutex = 1
+        # 수신 데이터 출력
         print("topic: "+msg.topic)
         print("payload: "+str(msg.payload.decode("utf-8")))
         if (msg.topic == targetTopic):
             payload = json.loads(str(msg.payload.decode("utf-8")))
-            lcd.lcd_clear()
-            lcd.lcd_display_string("Need a help", 1)
-            lcd.lcd_display_string("At next stop", 2)
-            play_audio("./output.mp3")
-            lcd.lcd_clear()
-            lcd.lcd_display_string("7800")
+            if (payload['Handling'] == 'True'):
+                # LCD 출력
+                lcd.lcd_clear()
+                lcd.lcd_display_string("Need a help", 1)
+                lcd.lcd_display_string("At next stop", 2)
+                # 경고 출력
+                play_audio("./output.mp3")
+                # LCD 초기화
+                lcd.lcd_clear()
+                lcd.lcd_display_string("7800")
         mutex = 0
     else:
         pass
