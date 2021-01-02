@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# from https://github.com/forksociety/PyBeacon
+# from https://github.com/forksociety/PyBeacon/blob/master/PyBeacon/PyBeacon.py
 import re
 import os
 import signal
