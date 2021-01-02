@@ -20,4 +20,4 @@ STM32Cube.AI, Tensorflow, Keras, AWS IoT, QT5, Google Cloud TTS
 
 # 시연 영상
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4hIDGSzT3UQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-[![Alt text](https://img.youtube.com/vi/4hIDGSzT3UQ/0.jpg)](https://www.youtube.com/watch?v=4hIDGSzT3UQ)
+[![](https://img.youtube.com/vi/4hIDGSzT3UQ/0.jpg)](https://www.youtube.com/watch?v=4hIDGSzT3UQ)
