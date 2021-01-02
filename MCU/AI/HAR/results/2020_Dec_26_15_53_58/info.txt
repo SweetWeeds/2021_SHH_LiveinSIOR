@@ -1,0 +1,6 @@
+runTime : 2020-Dec-26 at 15:53:58
+Database : WISDM
+Network : GMP
+SeqLength : 24
+StepSize : 24
+Epochs : 100

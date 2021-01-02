@@ -1,0 +1,6 @@
+runTime : 2020-Dec-26 at 13:30:32
+Database : WISDM
+Network : IGN
+SeqLength : 24
+StepSize : 24
+Epochs : 200
