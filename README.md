@@ -13,11 +13,24 @@
 
 단말기 - BLE - 버스 정보 시스템 - AWS IoT - LTE - 버스
 
-# 사용 언어
-Python, C, C++
-
-# 사용 기술
-STM32Cube.AI, Tensorflow, Keras, AWS IoT, QT5, Google Cloud TTS
+# 담당
+1) 하경준: BLE Beacon
+- STM32보드 B-L4S5I-IOT01A
+- Cube-MX
+- [MCU/wearable_for_bus](https://github.com/SweetWeeds/shh2021_LiveinSIOR/tree/master/MCU/wearable_for_bus)
+2) 권한결: STM32Cube.AI, AWS IoT
+- STM32보드 B-LS45I-IOT01A
+- Cube.AI, AWS IoT
+- [MCU/AI](https://github.com/SweetWeeds/shh2021_LiveinSIOR/tree/master/MCU/AI), [BUS/subscriber.py](https://github.com/SweetWeeds/shh2021_LiveinSIOR/blob/master/BUS/subscriber.py), [BUS_INFO/AWS_IoT](https://github.com/SweetWeeds/shh2021_LiveinSIOR/tree/master/BUS_INFO/AWS_IoT)
+3) 안현철: TTS, LCD
+- 라즈베리파이4
+- 구글 클라우드
+- [BUS](https://github.com/SweetWeeds/shh2021_LiveinSIOR/tree/master/BUS)
+4) 김춘수: GUI
+- 라즈베리파이4
+- QT Designer
+- [BUS_INFO/GUI](https://github.com/SweetWeeds/shh2021_LiveinSIOR/tree/master/BUS_INFO/GUI)
 
 # 시연 영상
+이미지를 클릭해주십시오.
 [![](https://img.youtube.com/vi/4hIDGSzT3UQ/0.jpg)](https://www.youtube.com/watch?v=4hIDGSzT3UQ)
