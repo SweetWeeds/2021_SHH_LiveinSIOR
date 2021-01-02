@@ -1,8 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>rec/BusB.png</file>
-        <file>rec/BusG.png</file>
-        <file>rec/BusR.png</file>
-        <file>rec/BusY.png</file>
-    </qresource>
-</RCC>

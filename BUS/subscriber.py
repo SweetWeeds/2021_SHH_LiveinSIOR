@@ -5,6 +5,8 @@ import ssl
 import json
 import lcddriver
 import pygame
+import time
+
 
 CHUNK = 1024
 targetTopic = 'passenger/get_in'
@@ -14,6 +16,7 @@ mutex = 0
 
 lcd = lcddriver.lcd()
 lcd.lcd_clear()
+lcd.lcd_display_string("7800")
 
 def play_audio(filename):
     freq = 24000    # sampling rate, 44100(CD), 16000(Naver TTS), 24000(google TTS)
@@ -25,6 +28,10 @@ def play_audio(filename):
     pygame.mixer.init(freq, bitsize, channels, buffer)
     pygame.mixer.music.load(filename)
     pygame.mixer.music.play()
+    clock = pygame.time.Clock()
+    while pygame.mixer.music.get_busy():
+        clock.tick(3)
+    pygame.mixer.quit()
 
 def on_connect(client, userdata, flags, rc):                # func for making connection
     print("Connection returned result: " + str(rc) )
@@ -40,9 +47,12 @@ def on_message(client, userdata, msg):                      # Func for receiving
         print("payload: "+str(msg.payload.decode("utf-8")))
         if (msg.topic == targetTopic):
             payload = json.loads(str(msg.payload.decode("utf-8")))
-            #lcd.lcd_display_string("Needa a help", 1)
-            #lcd.lcd_display_string("At next stop", 2)
+            lcd.lcd_clear()
+            lcd.lcd_display_string("Need a help", 1)
+            lcd.lcd_display_string("At next stop", 2)
             play_audio("./output.mp3")
+            lcd.lcd_clear()
+            lcd.lcd_display_string("7800")
         mutex = 0
     else:
         pass

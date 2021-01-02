@@ -63,8 +63,8 @@ all: main-build
 main-build: wearable_for_bus.elf secondary-outputs
 
 # Tool invocations
-wearable_for_bus.elf: $(OBJS) $(USER_OBJS) C:\Users\khk02\workspace\2021_SHH_LiveinSIOR\wearable_for_bus\STM32L4S5VITX_FLASH.ld
-	arm-none-eabi-gcc -o "wearable_for_bus.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\khk02\workspace\2021_SHH_LiveinSIOR\wearable_for_bus\STM32L4S5VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="wearable_for_bus.map" -Wl,--gc-sections -static -L../Middlewares/ST/AI/Lib --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+wearable_for_bus.elf: $(OBJS) $(USER_OBJS) C:\Users\khk02\workspace\shh2021_LiveinSIOR\wearable_for_bus\STM32L4S5VITX_FLASH.ld
+	arm-none-eabi-gcc -o "wearable_for_bus.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\khk02\workspace\shh2021_LiveinSIOR\wearable_for_bus\STM32L4S5VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="wearable_for_bus.map" -Wl,--gc-sections -static -L../Middlewares/ST/AI/Lib --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

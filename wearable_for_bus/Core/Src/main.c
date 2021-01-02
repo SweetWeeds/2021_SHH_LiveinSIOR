@@ -137,6 +137,8 @@ int main(void)
     /* Infinite loop */
     /* USER CODE BEGIN WHILE */
     uint32_t write_index = 0;
+    uint32_t count = 0;
+
     while (1) {
         //transmit zyro sensor coordinates by UART.
         if (dataRdyIntReceived != 0) {
@@ -164,7 +166,13 @@ int main(void)
                 uint32_t class = argmax(aiOutData, AI_NETWORK_OUT_1_SIZE);
                 printf(": %d - %s\r\n", (int)class, activities[class]);
                 if (class == 0) {
-                    BLE_UID_ON(1000);
+                	count++;
+                	if(count == 2) {
+                    	BLE_UID_ON(2000);
+                    	count = 0;
+                	}
+                } else {
+                	count = 0;
                 }
             }
         }
@@ -267,7 +275,7 @@ void BLE_UID_ON(uint32_t Delay) {
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
     if (GPIO_Pin == BUTTON_EXTI13_Pin) {
-        BLE_UID_ON(5000);
+        BLE_UID_ON(2000);
     }
     if (GPIO_Pin == LSM6DSL_INT1_EXTI11_Pin) {
         dataRdyIntReceived++;
