@@ -3,7 +3,7 @@ import os
 import socket
 import ssl
 import json
-#import lcddriver
+import lcddriver
 import pygame
 
 CHUNK = 1024
@@ -12,8 +12,8 @@ NameSpace = '7777772e73742e636f6d'
 UserList = ['000000000001']
 mutex = 0
 
-#lcd = lcddriver.lcd()
-#lcd.lcd_clear()
+lcd = lcddriver.lcd()
+lcd.lcd_clear()
 
 def play_audio(filename):
     freq = 24000    # sampling rate, 44100(CD), 16000(Naver TTS), 24000(google TTS)
