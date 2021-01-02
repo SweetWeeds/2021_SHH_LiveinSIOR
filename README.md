@@ -35,6 +35,11 @@
 - QT Designer
 - [BUS_INFO/GUI](https://github.com/SweetWeeds/shh2021_LiveinSIOR/tree/master/BUS_INFO/GUI)
 
+# 소개 영상
+이미지를 클릭해주십시오.
+
+[![](https://img.youtube.com/vi/MRky6hmbNtE/0.jpg)](https://youtu.be/MRky6hmbNtE)
+
 # 시연 영상
 이미지를 클릭해주십시오.
 
