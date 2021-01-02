@@ -42,7 +42,7 @@ if __name__ == "__main__":
     mqttc.loop_start()                                          # Start the loop
     
     while(True):
-        scan_results = PyBeacon.scan(1)
+        scan_results = PyBeacon.scan(5)
         for s in scan_results:
             if s['type'] == 'uid':
                 print("namespace:{}, instance:{}".format(s['content']['namespace'], s['content']['instance']))
